@@ -22,37 +22,5 @@ stage ('Build1')
        sh "cd /home/ubuntu/workspace/JenkinsPipelineJob/account-service ; mvn clean install " 
     }
 }
-    stage ('dockerbuild') 
-{
-    steps
-    {
-       sh "cd /home/ubuntu/workspace/JenkinsPipelineJob/account-service ; sudo docker build -t account-service . " 
-    }
-}
-     stage ('dockerimagepush ') 
-{
-    steps
-    {
-       sh "cd /home/ubuntu/workspace/JenkinsPipelineJob/account-service ; sudo  docker login -uashrafdoc -pAlibeta@123 "
-       sh "cd /home/ubuntu/workspace/JenkinsPipelineJob/account-service ; sudo docker tag account-service ashrafdoc/account-service  "
-       sh "cd /home/ubuntu/workspace/JenkinsPipelineJob/account-service ; sudo docker push ashrafdoc/account-service   "
-        
-        
-    }
-}
-    
-    
-stage ('k8sdeployment') 
-    {
-        steps {
-            node (' Ansible') {
-       sh " sudo ansible-playbook /root/k8s.yaml"
-       sh " sudo ansible-playbook /root/k8sservice.yaml" 
-   
-    }
-}
-}
-}
-    
-    
-}
+} 
+}  
