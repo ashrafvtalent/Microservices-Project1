@@ -19,7 +19,7 @@ stage ('Build1')
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/JenkinsPipelineJob/account-service ; mvn clean install " 
+       sh "cd /home/ubuntu/workspace/JenkinsPipelineDevops/account-service ; mvn clean install " 
     }
 }
 } 
