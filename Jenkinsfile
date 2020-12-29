@@ -45,8 +45,8 @@ stage ('Build1')
     {
     steps {
          node ('Ansible') {
-       sh "sudo ansible-playbook /root/k8s.yaml"
-       sh "sudo ansible-playbook /root/k8sservice.yaml" 
+       sh "sudo ansible-playbook /root/k8s.yml"
+       sh "sudo ansible-playbook /root/k8sservice.yml" 
    
     }
 }
